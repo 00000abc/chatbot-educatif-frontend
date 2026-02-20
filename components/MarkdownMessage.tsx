@@ -20,6 +20,53 @@ const markdownStyles = StyleSheet.create({
     color: '#111827',
     fontSize: 15,
     lineHeight: 22,
+    // Forcer le retour à la ligne des mots longs
+    wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+  },
+  
+  // Bloc de code : permettre le défilement horizontal si nécessaire
+  code_block: {
+    backgroundColor: '#1F2937',
+    borderRadius: 8,
+    padding: 12,
+    marginVertical: 8,
+    overflow: 'auto',            // Pour le web, permet le scroll horizontal
+    maxWidth: '100%',             // Empêche le débordement
+  },
+  fence: {
+    backgroundColor: '#1F2937',
+    borderRadius: 8,
+    padding: 12,
+    marginVertical: 8,
+    color: '#10B981',
+    fontFamily: 'monospace',
+    fontSize: 13,
+    overflow: 'auto',
+    maxWidth: '100%',
+  },
+  
+  // Code inline : garder le même comportement
+  code_inline: {
+    backgroundColor: '#FEF3C7',
+    color: '#D97706',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+    fontFamily: 'monospace',
+    fontSize: 14,
+    fontWeight: '600',
+    wordBreak: 'break-word',       // Sécurité supplémentaire
+  },
+  
+  // Tableaux : défilement horizontal
+  table: {
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    borderRadius: 8,
+    marginVertical: 8,
+    overflow: 'auto',
+    maxWidth: '100%',
   },
   
   // ========== TITRES ==========
@@ -203,4 +250,5 @@ const markdownStyles = StyleSheet.create({
   textgroup: {
     marginBottom: 4,
   },
+
 });
