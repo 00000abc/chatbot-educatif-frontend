@@ -397,16 +397,18 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   messageBubble: {
-    maxWidth: '75%',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderRadius: 20,
-    ...Platform.select({
-      web: {
-        maxWidth: 600, // largeur fixe en pixels pour les grands écrans
-      },
-    }),
-  },
+  maxWidth: '75%',
+  paddingHorizontal: 16,
+  paddingVertical: 12,
+  borderRadius: 20,
+  flexShrink: 1,                // Permet à la bulle de rétrécir si nécessaire
+  ...Platform.select({
+    web: {
+      wordBreak: 'break-word',  // Casse les mots longs sur le web
+      overflowWrap: 'break-word',
+    },
+  }),
+},
   userMessage: {
     backgroundColor: '#8B5CF6',
     borderBottomRightRadius: 4,
@@ -505,4 +507,5 @@ userLevel: {
   marginTop: 2,
   fontWeight: '500',
 },
+
 });
